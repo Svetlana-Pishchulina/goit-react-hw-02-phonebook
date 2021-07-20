@@ -1,8 +1,12 @@
+import styles from "./ContactsListItem.module.css";
+
 const ContactsListItem = ({ contacts, onDeleteButtonClick }) => {
   return contacts.map(({ id, name, number }) => (
-    <li key={id}>
+    <li className={styles.listItem} key={id}>
       {name}:{number}
-      <button onClick={() => onDeleteButtonClick(id)}>Delete</button>
+      <button className={styles.button} onClick={() => onDeleteButtonClick(id)}>
+        Delete
+      </button>
     </li>
   ));
 };

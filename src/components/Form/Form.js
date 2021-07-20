@@ -1,6 +1,8 @@
 import React from "react";
 import shortid from "shortid";
 
+import styles from "./Form.module.css";
+
 class Form extends React.Component {
   state = {
     name: "",
@@ -12,7 +14,6 @@ class Form extends React.Component {
     const name = evt.currentTarget.name;
     const value = evt.currentTarget.value;
     const id = shortid.generate();
-    // this.setState({ [name]: [value], id: id });
     this.setState((prev) => {
       return { ...prev, [name]: value, id: id };
     });
@@ -30,10 +31,11 @@ class Form extends React.Component {
   render() {
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
-          <label>
+        <form className={styles.form} onSubmit={this.handleSubmit}>
+          <label className={styles.label}>
             Name
             <input
+              className={styles.input}
               value={this.state.name}
               type="text"
               name="name"
@@ -43,9 +45,10 @@ class Form extends React.Component {
               onChange={this.handleChange}
             />
           </label>
-          <label>
+          <label className={styles.label}>
             Nuber
             <input
+              className={styles.input}
               value={this.state.number}
               type="tel"
               name="number"
