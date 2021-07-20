@@ -34,7 +34,7 @@ class Form extends React.Component {
           <label>
             Name
             <input
-              // value={this.state.name}
+              value={this.state.name}
               type="text"
               name="name"
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -46,6 +46,7 @@ class Form extends React.Component {
           <label>
             Nuber
             <input
+              value={this.state.number}
               type="tel"
               name="number"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
